@@ -42,7 +42,9 @@ const install = extensionReference => {
 
             return new Promise(function (resolve, reject) {
                 unzip(extensionPath, extensionFolder, (err) => {
-                    if (err) reject(err);
+                    if (err && !fs.existsSync(path.resolve(extensionFolder, 'manifest.json'))) {
+                        return reject(err);
+                    }
                     else {
                         const name = (remote || electron).BrowserWindow.addDevToolsExtension(extensionFolder); // eslint-disable-line
 

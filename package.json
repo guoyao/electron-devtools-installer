@@ -1,6 +1,6 @@
 {
   "name": "electron-devtools-installer-ex",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "description": "An easy way to install Dev Tools extensions into Electron applications",
   "main": "dist/index.js",
   "scripts": {

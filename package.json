@@ -1,5 +1,5 @@
 {
-  "name": "electron-devtools-installer",
+  "name": "electron-devtools-installer-ex",
   "version": "2.2.0",
   "description": "An easy way to install Dev Tools extensions into Electron applications",
   "main": "dist/index.js",
@@ -23,12 +23,12 @@
     "url": "www.samuelattard.com"
   },
   "bugs": {
-    "url": "https://github.com/GPMDP/electron-devtools-installer/issues"
+    "url": "https://github.com/guoyao/electron-devtools-installer/issues"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GPMDP/electron-devtools-installer.git"
+    "url": "https://github.com/guoyao/electron-devtools-installer.git"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -49,6 +49,7 @@
   "dependencies": {
     "7zip": "0.0.6",
     "cross-unzip": "0.0.2",
+    "node-zipkit": "^0.1.0",
     "rimraf": "^2.5.2",
     "semver": "^5.3.0"
   },

@@ -14,9 +14,21 @@ then configuring the path for everyone's machines.
 All you have to do now is
 
 ```js
-import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
+import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer-ex';
 
 installExtension(REACT_DEVELOPER_TOOLS)
+    .then((name) => console.log(`Added Extension:  ${name}`))
+    .catch((err) => console.log('An error occurred: ', err));
+```
+
+or provide `forceDownload`、`offlineInstall` options 
+
+```js
+import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer-ex';
+
+const forceDownload = false;
+const offlineInstall = true;
+installExtension(REACT_DEVELOPER_TOOLS, forceDownload, offlineInstall)
     .then((name) => console.log(`Added Extension:  ${name}`))
     .catch((err) => console.log('An error occurred: ', err));
 ```
@@ -24,7 +36,7 @@ installExtension(REACT_DEVELOPER_TOOLS)
 Alternatively, using `require()` and destructuring (node v6 or higher) you can
 
 ```js
-const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
+const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer-ex');
 
 installExtension(REACT_DEVELOPER_TOOLS)
     .then((name) => console.log(`Added Extension:  ${name}`))
@@ -45,7 +57,7 @@ import installExtension, {
   ANGULARJS_BATARANG, VUEJS_DEVTOOLS,
   REDUX_DEVTOOLS, REACT_PERF,
   CYCLEJS_DEVTOOL,
-} from 'electron-devtools-installer';
+} from 'electron-devtools-installer-ex';
 ```
 
 ## How does it work?

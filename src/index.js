@@ -1,8 +1,8 @@
 import onlineInstall from './onlineInstall';
 import offlineInstall from './offlineInstall';
 
-const install = (extensionReference, forceDownload = false, offlineInstall = true) => {
-    if (forceDownload || !offlineInstall) {
+const install = (extensionReference, forceDownload = false, offline = true) => {
+    if (forceDownload || !offline) {
         return onlineInstall(extensionReference, forceDownload);
     }
 

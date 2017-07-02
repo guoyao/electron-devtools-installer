@@ -1,6 +1,7 @@
 import electron, {remote} from 'electron';
 import path from 'path';
 import fs from 'fs';
+import semver from 'semver';
 import zipkit from 'node-zipkit';
 import rimraf from 'rimraf';
 

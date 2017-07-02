@@ -2,7 +2,7 @@ import electron, {remote} from 'electron';
 import path from 'path';
 import fs from 'fs';
 import semver from 'semver';
-import zipkit from 'node-zipkit';
+import unzip from 'cross-unzip';
 import rimraf from 'rimraf';
 
 import {checkConfig, getPath, getIDMapPath} from './utils';
@@ -41,7 +41,7 @@ const install = extensionReference => {
             rimraf.sync(extensionFolder);
 
             return new Promise(function (resolve, reject) {
-                zipkit.unzip(extensionPath, extensionFolder, (err) => {
+                unzip(extensionPath, extensionFolder, (err) => {
                     if (err) reject(err);
                     else {
                         const name = (remote || electron).BrowserWindow.addDevToolsExtension(extensionFolder); // eslint-disable-line
